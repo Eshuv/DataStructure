@@ -7,31 +7,25 @@ const char* catAndMouse(int x, int y, int z)
 {
 	int count1 = 0;
 	int count2 = 0;
-	while (z != x)
+
+	if (z > x)
 	{
-		if (z > x)
-		{
-			x++;
-		}
-		else
-		{
-			x--;
-		}
-		count1++;
+		count1 = z - x;
 	}
-	
-	while (z != y)
+	else
 	{
-		if (z > y)
-		{
-			y++;
-		}
-		else
-		{
-			y--;
-		}
-		count2++;
+		count1 = x - z;
 	}
+
+	if (z > y)
+	{
+		count2 = z - y;
+	}
+	else
+	{
+		count2 = y - z;
+	}
+
 	if (count1 > count2)
 	{
 		return "Cat B";
@@ -40,17 +34,17 @@ const char* catAndMouse(int x, int y, int z)
 	{
 		return "Cat A";
 	}
-	
+
 	return "Mouse C";
-	
-		
+
+
 }
 
 int main()
 {
 	int x = 1;
-	int y = 3;
-	int z = 2;
+	int y = 2;
+	int z = 3;
 
 	printf("%s", catAndMouse(x, y, z));
 }
