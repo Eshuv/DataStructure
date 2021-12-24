@@ -5,26 +5,9 @@
 
 const char* catAndMouse(int x, int y, int z)
 {
-	int count1 = 0;
-	int count2 = 0;
+	int count1 = (z > x) ? (z - x) : (x - z);
+	int count2 = (z > y) ? (z - y) : (y - z);
 
-	if (z > x)
-	{
-		count1 = z - x;
-	}
-	else
-	{
-		count1 = x - z;
-	}
-
-	if (z > y)
-	{
-		count2 = z - y;
-	}
-	else
-	{
-		count2 = y - z;
-	}
 
 	if (count1 > count2)
 	{
@@ -34,10 +17,7 @@ const char* catAndMouse(int x, int y, int z)
 	{
 		return "Cat A";
 	}
-
 	return "Mouse C";
-
-
 }
 
 int main()
